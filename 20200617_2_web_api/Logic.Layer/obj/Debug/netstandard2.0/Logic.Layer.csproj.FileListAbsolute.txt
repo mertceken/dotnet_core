@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\bin\Debug\netstandard2.0\Logic.Layer.deps.json
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\bin\Debug\netstandard2.0\Logic.Layer.dll
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\bin\Debug\netstandard2.0\Logic.Layer.pdb
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.csprojAssemblyReference.cache
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.AssemblyInfo.cs
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.dll
+C:\Users\User\source\repos\20200617_2_web_api\Logic.Layer\obj\Debug\netstandard2.0\Logic.Layer.pdb
