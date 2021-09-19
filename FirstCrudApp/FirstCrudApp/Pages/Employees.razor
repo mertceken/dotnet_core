@@ -1,0 +1,44 @@
+﻿@page "/employees"
+@inject FirstCrudApp.Data.IEmployeeService EmployeeService;
+    <h3>Employees</h3>
+<br />
+<a href="employee/0">Add Employee</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in employees)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td><a href="employee/@employee.Id">
+                    Edit</a></td>
+                <td>
+                    <button class="btn btn-primary" @onclick="@(e=> OnDelete(employee.Id))">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@code {
+    private List<FirstCrudApp.Data.Employee> employees;
+
+    protected override void OnInitialized()
+    {
+        employees = EmployeeService.GetEmployees();
+    }
+
+    private void OnDelete(Guid id)
+    {
+        EmployeeService.DeleteEmployee(id);
+    }
+}
