@@ -1,0 +1,82 @@
+﻿@page "/student"
+@using BlazorDapperTutorial.Data;
+@inject BlazorDapperTutorial.IService.IStudentService studentService;
+
+<h3>Student Page</h3>
+
+<div class="DivbasicForm">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Name</label>
+            <input type="text" placeholder="Student Name" @bind="@student.Name" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label>Roll</label>
+            <input type="text" placeholder="Student Roll" @bind="@student.Roll" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label></label>
+            <button class="btn btn-success" style="margin-top:30px;" @onclick="@Save">Save</button>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stu in @students)
+        {
+            <tr>
+                <td>@stu.Id</td>
+                <td>@stu.Name</td>
+                <td>@stu.Roll</td>
+                <td>
+                  <button class="btn btn-primary" @onclick="@(e=> GetById(@stu.Id))" style="float:left">Edit</button>
+                  <button class="btn btn-primary" @onclick="@(e=> Delete(@stu))" style="float:left">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    List<Student> students = new List<Student>();
+    Student student = new Student();
+
+    string Message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetStudent();
+    }
+
+    private void GetStudent()
+    {
+        students = studentService.GetStudents();
+    }
+    private void GetById(int id)
+    {
+        student = studentService.GetById(id);
+    }
+    private void Save()
+    {
+        var studentObj = new Student();
+        studentObj = studentService.SaveOrUpdate(student);
+        student = new Student();
+        GetStudent();
+    }
+    private void Delete(Student oStudent)
+    {
+        Message = studentService.Delete(oStudent.Id);
+        students.RemoveAll(x => x.Id == oStudent.Id);
+    }
+}
