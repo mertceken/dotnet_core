@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorDapperTutorial.Shared
+namespace BlazorDapperTutorial.Pages
 {
     #line hidden
     using System;
@@ -75,7 +75,15 @@ using BlazorDapperTutorial.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\User\Desktop\BlazorDapperTutorial\BlazorDapperTutorial\Pages\TeacherPage.razor"
+using BlazorDapperTutorial.Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/teacher")]
+    public partial class TeacherPage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -83,20 +91,47 @@ using BlazorDapperTutorial.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\User\Desktop\BlazorDapperTutorial\BlazorDapperTutorial\Shared\NavMenu.razor"
+#line 51 "C:\Users\User\Desktop\BlazorDapperTutorial\BlazorDapperTutorial\Pages\TeacherPage.razor"
        
-    private bool collapseNavMenu = true;
+    List<Teacher> teachers = new List<Teacher>();
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    Teacher teacher = new Teacher();
 
-    private void ToggleNavMenu()
+    string Message = "";
+
+    protected override async Task OnInitializedAsync()
     {
-        collapseNavMenu = !collapseNavMenu;
+        GetTeachers();
+    }
+
+    private void GetTeachers()
+    {
+        teachers = teacherService.GetTeachers();
+    }
+
+    private void GetById(int id)
+    {
+        teacher = teacherService.GetById(id);
+    }
+
+    private void Save()
+    {
+        var teacherObj = new Teacher();
+        teacherObj = teacherService.SaveOrUpdate(teacher);
+        teacher = new Teacher();
+        GetTeachers();
+    }
+
+    private void Delete(Teacher oTeacher)
+    {
+        Message = teacherService.Delete(oTeacher.ID);
+        teachers.RemoveAll(x => x.ID == oTeacher.ID);
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BlazorDapperTutorial.IService.ITeacherService teacherService { get; set; }
     }
 }
 #pragma warning restore 1591

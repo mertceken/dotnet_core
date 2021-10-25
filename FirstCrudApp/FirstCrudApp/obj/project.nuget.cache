@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2MXP6LTk6yx7AMDYQfdZ/dfGxaVuM7iB/e5Sbv7qtMhlQrQtZ9O7ecufxBvIGL7cR7d/th6GU/0AGYB5ao+t9Q==",
+  "dgSpecHash": "5ikXReiDD00UcwAR70aiqU5z3jwBf+drKjZ/PmWv5bR4q17qzqpi2uFRTA7rPFNiQMTrKe3mzbLUCLpdyv/4GQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\dotnet_core\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\dotnet_core\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
       "projectName": "FirstCrudApp",
-      "projectPath": "C:\\Users\\User\\source\\repos\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\dotnet_core\\FirstCrudApp\\FirstCrudApp\\FirstCrudApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\FirstCrudApp\\FirstCrudApp\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\dotnet_core\\FirstCrudApp\\FirstCrudApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

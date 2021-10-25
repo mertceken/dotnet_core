@@ -1,0 +1,86 @@
+﻿@page "/teacher"
+@using BlazorDapperTutorial.Data;
+@inject BlazorDapperTutorial.IService.ITeacherService teacherService
+
+<h3>Teachers Page</h3>
+
+<div class="DivbasicForm">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Teacher Name</label>
+            <input type="text" placeholder="Teacher Name" @bind="@teacher.TeacherName" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label>Branch</label>
+            <input type="text" placeholder="Branch" @bind="@teacher.Branch" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label></label>
+            <button class="btn btn-success" style="margin-top:30px;" @onclick="@Save">Save</button>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Teacher ID</th>
+            <th>Teacher Name</th>
+            <th>Branch</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tea in teachers)
+        {
+            <tr>
+                <td>@tea.ID</td>
+                <td>@tea.TeacherName</td>
+                <td>@tea.Branch</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="@(e=> GetById(@tea.ID))" style="float:left">Edit</button>
+                    <button class="btn btn-primary" @onclick="@(e=> Delete(@tea))" style="float:left">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    List<Teacher> teachers = new List<Teacher>();
+
+    Teacher teacher = new Teacher();
+
+    string Message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetTeachers();
+    }
+
+    private void GetTeachers()
+    {
+        teachers = teacherService.GetTeachers();
+    }
+
+    private void GetById(int id)
+    {
+        teacher = teacherService.GetById(id);
+    }
+
+    private void Save()
+    {
+        var teacherObj = new Teacher();
+        teacherObj = teacherService.SaveOrUpdate(teacher);
+        teacher = new Teacher();
+        GetTeachers();
+    }
+
+    private void Delete(Teacher oTeacher)
+    {
+        Message = teacherService.Delete(oTeacher.ID);
+        teachers.RemoveAll(x => x.ID == oTeacher.ID);
+    }
+}

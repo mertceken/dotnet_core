@@ -557,11 +557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\BlazorDapperTutorial\\BlazorDapperTutorial\\BlazorDapperTutorial.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\BlazorDapperTutorial\\BlazorDapperTutorial\\BlazorDapperTutorial.csproj",
       "projectName": "BlazorDapperTutorial",
-      "projectPath": "C:\\Users\\User\\source\\repos\\BlazorDapperTutorial\\BlazorDapperTutorial\\BlazorDapperTutorial.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\BlazorDapperTutorial\\BlazorDapperTutorial\\BlazorDapperTutorial.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\BlazorDapperTutorial\\BlazorDapperTutorial\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\BlazorDapperTutorial\\BlazorDapperTutorial\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

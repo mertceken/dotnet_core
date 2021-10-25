@@ -33,6 +33,7 @@ namespace BlazorDapperTutorial
             services.AddSingleton<WeatherForecastService>();
 
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<ITeacherService, TeacherService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
