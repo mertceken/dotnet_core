@@ -5,7 +5,6 @@ Here is my firt microservice development.
 
 - ASP.NET Core
 - EF Core
-- Ocelot API Gateway Framework
 
 
 
